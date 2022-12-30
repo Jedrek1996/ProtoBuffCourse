@@ -32,10 +32,19 @@ func doComplex() *pb.Complex {
 	}
 }
 
+func doEnum() *pb.EnumrateEye {
+	return &pb.EnumrateEye{
+		EyeColor: 2, //pb.Eyecolor_Eye_Color_Blue (Can use enum key)
+	}
+}
+
 func main() {
 	fmt.Println("Do Simple ----")
-	fmt.Println(doSimple())
+	fmt.Printf("%v\n", doSimple())
 
 	fmt.Println("Do Complex ----")
-	fmt.Println(doComplex())
+	fmt.Printf("%v\n", doComplex())
+
+	fmt.Println("Do Enum ----")
+	fmt.Printf("%v\n", doEnum())
 }

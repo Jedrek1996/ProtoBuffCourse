@@ -1,0 +1,16 @@
+syntax ="proto3";
+
+package example.enum;
+
+option go_package = "./ProtoCourse";
+
+enum Eyecolor {
+    Eye_Color_Unspecified = 0;
+    Eye_Color_Red = 1;
+    Eye_Color_Blue = 2;
+    Eye_Color_Green = 3;
+}
+
+message EnumrateEye{
+    Eyecolor eye_color =1;
+}
