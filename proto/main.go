@@ -38,6 +38,17 @@ func doEnum() *pb.EnumrateEye {
 	}
 }
 
+func doOneOf(message interface{}) {
+	switch x := message.(type) {
+	case *pb.Result_Id:
+		fmt.Println(message.(*pb.Result_Id).Id)
+	case *pb.Result_Message:
+		fmt.Println(message.(*pb.Result_Message).Message)
+	default:
+		fmt.Errorf("Not string or int32", x)
+	}
+}
+
 func main() {
 	fmt.Println("Do Simple ----")
 	fmt.Printf("%v\n", doSimple())
@@ -47,4 +58,9 @@ func main() {
 
 	fmt.Println("Do Enum ----")
 	fmt.Printf("%v\n", doEnum())
+
+	fmt.Println("Do Oneof ----")
+	doOneOf(&pb.Result_Id{Id: 32})
+	doOneOf(&pb.Result_Message{Message: "Hello!"})
+
 }

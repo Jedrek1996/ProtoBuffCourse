@@ -1,6 +1,6 @@
 syntax ="proto3";
 
-package example.dummy;
+package example.simple;
 
 option go_package = "./ProtoCourse";
 
